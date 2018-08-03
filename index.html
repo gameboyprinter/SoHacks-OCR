@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
+        <script src="./index.js"></script>
+    </head>
+    <body onload="init()">
+        <canvas height="1024" width="1800" id="canvas" style="border: 1px solid #000; cursor: crosshair"></canvas>
+        <br>
+        <button onclick="erase()">Clear</button>
+        <br>
+        <button onclick="analyze()">Recognize</button>
+        <br>
+        <input id="file" type="file" accept="image/*">
+        <br>
+        <div id="status">
+
+        </div>
+        <br>
+        <div id="result">
+
+        </div>
+    </body>
+</html>
