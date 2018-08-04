@@ -1,5 +1,6 @@
 <html>
     <head>
+        <meta charset="utf8">
         <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
         <script src="./index.js"></script>
     </head>
@@ -8,6 +9,10 @@
         <br>
         <h3>Note that results are likely to be inaccurate with handwriting or low resolution images. Use high resolution images for the best results.</h3>
         <canvas height="256" width="256" id="canvas" style="border: 1px solid #000; cursor: crosshair"></canvas>
+        <br>
+        Saturation: <input type="range" min="0" max="100" value="0" class="slider" id="saturation">
+        <br>
+        Contrast: <input type="range" min="0" max="100" value="100" class="slider" id="contrast">
         <br>
         <input id="file" type="file" accept="image/*">
         <br>
