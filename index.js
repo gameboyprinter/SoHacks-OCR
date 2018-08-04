@@ -59,7 +59,6 @@ function mouseup(e) {
     if (isDown) {
         img = new Image();
         img.src = canvas.toDataURL("image/png");
-        console.log(img.src);
         img.onload = () => {
             ctx.filter = `saturate(${saturation}%) contrast(${contrast}%)`;
 
@@ -157,8 +156,13 @@ function draw(img) {
     });
 }
 
+async function reset(){
+    await draw(img);
+    analyze();
+}
+
 async function upload(e) {
     url = window.URL.createObjectURL(e.target.files[0]);
     await draw(img);
-    analyze(img);
+    analyze();
 }
