@@ -53,10 +53,10 @@ function getXY() {
 
 
 function mouseup(e) {
-
     ctx2.clearRect(0, 0, canvas.width, canvas.height);
 
     if (isDown) {
+
         img = new Image();
         img.src = canvas.toDataURL("image/png");
         img.onload = () => {
@@ -91,7 +91,13 @@ function mousemove(e) {
     if (isDown) {
         ctx2.strokeStyle = "black";
         var xy = getXY();
-        ctx2.strokeRect(startX, startY, (e.clientX - xy.x) - startX, (e.clientY - xy.y) - startY);
+        if((e.clientX - xy.x) - startX < 0 || (e.clientY - xy.y) - startY < 0){
+            ctx2.strokeRect(startX, startY, 0, 0);
+            isDown = false;
+        } else {
+            ctx2.strokeRect(startX, startY, (e.clientX - xy.x) - startX, (e.clientY - xy.y) - startY);
+        }
+        
     }
 }
 
