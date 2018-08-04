@@ -93,5 +93,3 @@ async function upload(e) {
     await draw(img);
     analyze(img);
 }
-
-//210-788-2727
